@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Financial KPIs Dashboard</title>
+<link rel="stylesheet" href="KPI.css" />
+<!-- Include SheetJS library for XLSX handling -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Financial KPIs Dashboard</h1>
+</header>
+
+<div class="buttons">
+  <button id="download-template">Download XLSX Template</button>
+  <button id="load-template">Load XLSX Template</button>
+  <button id="refresh-template">Refresh Template</button>
+</div>
+
+<div class="sections">
+  <div class="section" id="group-general">
+    <div class="section-header">
+      <h2>General KPIs</h2>
+      <button class="toggle-btn" data-section="general">Show/Hide</button>
+    </div>
+    <div class="kpi-group" id="group-general-values">
+      <div>Current Ratio: <span class="value" id="CR"></span></div>
+      <div>Quick Ratio: <span class="value" id="QR"></span></div>
+      <div>Debt to Equity Ratio: <span class="value" id="DER"></span></div>
+      <div>Debt Ratio: <span class="value" id="DR"></span></div>
+      <div>Equity Ratio: <span class="value" id="ER"></span></div>
+      <div>Book Value per Share: <span class="value" id="BVPS"></span></div>
+      <div>Earnings Per Share (EPS): <span class="value" id="EPS"></span></div>
+      <div>Price Earnings (P/E) Ratio: <span class="value" id="PE"></span></div>
+    </div>
+  </div>
+
+  <div class="section" id="group-operative">
+    <div class="section-header">
+      <h2>Operative KPIs</h2>
+      <button class="toggle-btn" data-section="operative">Show/Hide</button>
+    </div>
+    <div class="kpi-group" id="group-operative-values">
+      <div>Working Capital: <span class="value" id="WC"></span></div>
+      <div>Inventory Turnover: <span class="value" id="IT"></span></div>
+      <div>Accounts Payable Turnover: <span class="value" id="APT"></span></div>
+      <div>Assets Turnover Ratio: <span class="value" id="ATR"></span></div>
+      <div>Fixed Asset Turnover: <span class="value" id="FAT"></span></div>
+      <div>Working Capital Turnover: <span class="value" id="WCT"></span></div>
+      <div>Turnover Ratio: <span class="value" id="TR"></span></div>
+      <div>Dividend Payout Ratio: <span class="value" id="DPR"></span></div>
+    </div>
+  </div>
+
+  <div class="section" id="group-cashflow">
+    <div class="section-header">
+      <h2>Cash Flow KPIs</h2>
+      <button class="toggle-btn" data-section="cashflow">Show/Hide</button>
+    </div>
+    <div class="kpi-group" id="group-cashflow-values">
+      <div>Operating Cash Flow Ratio: <span class="value" id="OCFR"></span></div>
+      <div>Free Cash Flow: <span class="value" id="FCF"></span></div>
+      <div>Cash Flow to Debt Ratio: <span class="value" id="CFDR"></span></div>
+      <div>Cash Flow Margin: <span class="value" id="CFM"></span></div>
+      <div>Cash Return on Assets (Cash ROA): <span class="value" id="CRA"></span></div>
+      <div>Debt Coverage Ratio: <span class="value" id="DCR"></span></div>
+      <div>Cash Conversion Ratio: <span class="value" id="CCR"></span></div>
+    </div>
+  </div>
+
+  <div class="section" id="group-returns">
+    <div class="section-header">
+      <h2>Returns KPIs</h2>
+      <button class="toggle-btn" data-section="returns">Show/Hide</button>
+    </div>
+    <div class="kpi-group" id="group-returns-values">
+      <div>Returns On Assets (ROA): <span class="value" id="ROA"></span></div>
+      <div>Return On Equity (ROE): <span class="value" id="ROE"></span></div>
+      <div>ROI: <span class="value" id="ROI"></span></div>
+      <div>ROIC: <span class="value" id="ROIC"></span></div>
+      <div>ROE (alternative): <span class="value" id="ROE_alt"></span></div>
+      <div>ROCE: <span class="value" id="ROCE"></span></div>
+      <div>ROA (alternative): <span class="value" id="ROA_alt"></span></div>
+    </div>
+  </div>
+</div>
+
+<script src="KPI.js"></script>
+</body>
+</html>
